@@ -46,7 +46,7 @@ const LoginUserCrtl = expressAsyncHandler(async (req, res) => {
   }
 });
 
-const fetcUsersCtrl = expressAsyncHandler(async (req, res) => {
+const fetchUsersCtrl = expressAsyncHandler(async (req, res) => {
   try {
     const users = await User.find({});
     res.json(users);
@@ -55,7 +55,7 @@ const fetcUsersCtrl = expressAsyncHandler(async (req, res) => {
   }
 });
 
-const fetcSingleUserCtrl = expressAsyncHandler(async (req, res) => {
+const fetchSingleUserCtrl = expressAsyncHandler(async (req, res) => {
     try {
       const users = await User.findById(req.params.id);
       res.json(users);
@@ -109,8 +109,8 @@ const deleteUserCtrl = expressAsyncHandler(async (req, res) => {
 module.exports = {
   registerUser,
   LoginUserCrtl,
-  fetcSingleUserCtrl,
-  fetcUsersCtrl,
+  fetchSingleUserCtrl,
+  fetchUsersCtrl,
   updateUserCtrl,
   deleteUserCtrl,
 };

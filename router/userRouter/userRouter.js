@@ -1,19 +1,19 @@
 const express = require("express");
 const {
   registerUser,
-  fetcUsersCtrl,
+  fetchUsersCtrl,
   updateUserCtrl,
   deleteUserCtrl,
   LoginUserCrtl,
-  fetcSingleUserCtrl,
+  fetchSingleUserCtrl,
 } = require("../../controllers/UserControllers/UserControllers");
 const authmidlewarres = require("../../middlewares/authmidlewarres");
 const userRoutes = express.Router();
 
 userRoutes.post("/register", registerUser);
 userRoutes.post("/login", LoginUserCrtl);
-userRoutes.get("/", authmidlewarres, fetcUsersCtrl);
-userRoutes.get("/:id", authmidlewarres, fetcSingleUserCtrl);
+userRoutes.get("/", authmidlewarres, fetchUsersCtrl);
+userRoutes.get("/:id", authmidlewarres, fetchSingleUserCtrl);
 userRoutes.put("/", authmidlewarres, updateUserCtrl);
 userRoutes.delete("/:id", authmidlewarres, deleteUserCtrl);
 
